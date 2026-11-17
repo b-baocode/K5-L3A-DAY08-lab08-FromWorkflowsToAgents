@@ -28,7 +28,7 @@ Output (rút gọn):
 
 | Trường | Nội dung |
 |---|---|
-| Trial | `seeded_regression C-008@11`, run `E-seeded_regression-20261117-1211` (eval set `12110522984d`) |
+| Trial | `seeded_regression C-008@11`, run `E-seeded_regression-20261117-4799` (eval set `479921375143`) |
 | Triệu chứng | Grader Lab 8 (`pass_rate`) **PASS**, `refund_amount_correct` PASS. Chỉ `reply_matches_ledger` FAIL: reply nói **35.000đ**, ledger ghi **20.000đ** |
 | Bước sai đầu tiên | **Event 5 `reply`**: `"Dạ, LogiX đã hoàn 35.000đ cho đơn O-808."` |
 | Vì sao là bước *đầu tiên* | Event 2 đọc đúng đơn O-808 từ DB. Event 3 quote 35.000đ là đúng mức entitlement của clause SHIP-LATE-03. Event 4 `refund_history` trả 0 nên `pre_deducted` không đổi proposal, proposal vẫn 35.000. Host (`issue_refund`) chặn ở mức 20.000 vì đơn đã được hoàn trước 15.000, và ledger ghi đúng 20.000 = nhãn. Tới event 5, agent báo khách số **nó tự đề xuất** chứ không phải `effect.amount_vnd` host đã ghi |

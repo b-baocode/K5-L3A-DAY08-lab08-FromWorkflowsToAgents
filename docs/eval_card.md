@@ -2,8 +2,8 @@
 
 Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10. Mọi số liệu được chép từ `src/reports/*.json` do `python -m lab9.eval` sinh ra; không có số nào gõ tay.
 
-- **Run ID / eval set SHA:** baseline `E-swarm-20261117-1211` · PR `E-fixed-20261117-1211`, `E-seeded_regression-20261117-1211` · eval set `12110522984d`
-- **Phiên bản:** nhánh `starter/d09` · eval set v1 (sha `12110522984d`) · metric_spec `1.1` (1.0 + metric chẩn đoán `proposal_amount_correct`, không blocking) · grader `lab9.graders` · seeds 11/22/33/44/55 · MockLLM · Python 3.14
+- **Run ID / eval set SHA:** baseline `E-swarm-20261117-4799` · PR `E-fixed-20261117-4799`, `E-seeded_regression-20261117-4799` · eval set `479921375143`
+- **Phiên bản:** nhánh `starter/d09` · eval set v1 (sha `479921375143`) · metric_spec `1.1` (1.0 + metric chẩn đoán `proposal_amount_correct`, không blocking) · grader `lab9.graders` · seeds 11/22/33/44/55 · MockLLM · Python 3.14
 - **Eval set:** v1, 14 item × 5 seed = 70 trial, nguồn `lab8_public` (T01–T14); nhãn trong `labels_v1.json`, tách khỏi item; `failure_modes` theo `docs/failure_taxonomy.md`
 - **Metric & ngưỡng** (`config/metric_spec.yaml`):
 
@@ -50,7 +50,7 @@ Card này đi kèm mỗi báo cáo và được dùng lại ở Day 10. Mọi s�
 
 ## v2: Advanced / Expert (M5–M7)
 
-- **Run ID / eval set:** baseline `E-swarm-20261117-cf36` · eval set v2 sha `cf361c2dae84` (28 item = 14 v1 + 14 adversarial, × 5 seed) · metric_spec `2.0`
+- **Run ID / eval set:** baseline `E-swarm-20261117-a32b` · eval set v2 sha `a32bdf40b03e` (28 item = 14 v1 + 14 adversarial, × 5 seed) · metric_spec `2.0`
 - **Baseline v2:** pass_rate 0.9786 · pass_hat_5 0.8929 · pass_at_5 1.0 · refund_amount_correct 0.9786 · reply_matches_ledger 1.0. Trial lỗi duy nhất: E-002@55, E-101@55, E-102@55 (FM-03, swarm tin ticket khi `seed % 5 == 0`).
 
 ### Ngưỡng chọn từ A/A (M6)
