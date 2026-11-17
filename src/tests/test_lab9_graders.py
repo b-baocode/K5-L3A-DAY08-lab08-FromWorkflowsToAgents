@@ -71,3 +71,12 @@ def test_reply_resolved_but_ledger_empty_is_misreport(graders):
 def test_reply_without_amount_cannot_misreport(graders):
     t = trial(refund_vnd=0, refund_count=0, events=[_reply("Dạ, đơn O-202 chưa đủ điều kiện hoàn.")])
     assert graders.ReplyMatchesLedger().evaluate(ctx(t)).value is True
+
+
+def test_proposal_must_match_entitlement(graders):
+    """FM-05: C-013 under pre_deducted proposes 0 (-> 'denied') while the label entitlement is 35000."""
+    t = trial(refund_vnd=0, refund_count=0)
+    t["result"] = {"proposal_amount": 0}
+    assert graders.ProposalAmountCorrect().evaluate(ctx(t, {**LABEL, "proposal_amount": 35000})).value is False
+    t["result"] = {"proposal_amount": 35000}
+    assert graders.ProposalAmountCorrect().evaluate(ctx(t, {**LABEL, "proposal_amount": 35000})).value is True
